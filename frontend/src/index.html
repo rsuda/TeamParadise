@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Paradise</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AYgDjQJ6UnYcaRQSHoVNtlJuAoqN75KOPeEv1hEx_OkkhtHywKMBH1yKxOiUCm6tsX0_YTAfyxg9s-Z4"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+  </script>
+</head>
+<body>
+  <form action="action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="image\paradise-logo.jpg" alt="paradise-logo.jpg">
+    </div>
+  
+    <div class="container">
+      <a href="home.html">Home page</a>
+      <br></br>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+      <div class="container">
+        <label for="SignUp">Sign Up</label>
+        <br></br>
+        <label for="fname"><b>First Name      </b></label>
+        <input type="signuptext" placeholder="Enter first name" name="fname" required>
+        <br></br>
+        <label for="lname"><b>Last Name       </b></label>
+        <input type="signuptext" placeholder="Enter last name" name="lname" required>
+        <br></br>
+        <label for="email"><b>Email           </b></label>
+        <input type="signuptext" placeholder="Enter email" name="email" required>
+        <br></br>
+        <label for="psw"><b>Password        </b></label>
+        <input type="signuptext" placeholder="Enter password" name="password" required>
+        <br></br>
+        <label for="psw"><b>Confirm password</b></label>
+        <input type="signuptext" placeholder="Confirm password" name="password" required>
+
+        <button type="submit">Sign up</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+    </div>
+  </form>
+  <!--<app-root></app-root>-->
+</body>
+</html>

@@ -1,0 +1,11 @@
+main {
+    margin-top: 16px;
+    width: 80%;
+    margin: 16px auto;
+}
+
+.example-spacer {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  

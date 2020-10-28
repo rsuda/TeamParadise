@@ -1,0 +1,109 @@
+<mat-card>
+    <form>
+        <h1 h1 class="mat-h1">Profile</h1>
+        <label>email</label>
+        <mat-form-field>
+            <input 
+            matInput  
+            name="email"
+            ngModel
+            required
+            placeholder="Email"
+            #email="ngModel">
+            <mat-error *ngIf="email.invalid">Please enter a email</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="firstname" 
+            ngModel
+            required
+            placeholder="First name"
+            #password = "ngModel">
+           <!-- <mat-error *ngIf="firstname.invalid">Please enter first name</mat-error> -->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="lastname" 
+            ngModel
+            required
+            placeholder="Last name"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="lastname.invalid">Please enter last name</mat-error>-->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="password" 
+            ngModel
+            required
+            placeholder="Password"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="password.invalid">Please enter password</mat-error>-->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="city" 
+            ngModel
+            required
+            placeholder="City"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="password.invalid">Please enter password</mat-error>-->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="state" 
+            ngModel
+            required
+            placeholder="State"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="password.invalid">Please enter password</mat-error>-->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="street" 
+            ngModel
+            required
+            placeholder="Street"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="password.invalid">Please enter password</mat-error>-->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="zipcode" 
+            ngModel
+            required
+            placeholder="Zipcode"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="password.invalid">Please enter password</mat-error>-->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            name="phone" 
+            ngModel
+            required
+            placeholder="Phone"
+            #password = "ngModel">
+            <!--<mat-error *ngIf="password.invalid">Please enter password</mat-error>-->
+        </mat-form-field>
+        <br>
+        <button 
+            mat-raised-button
+            color="primary" 
+            type="submit">Sign Up</button>
+    </form>
+</mat-card>

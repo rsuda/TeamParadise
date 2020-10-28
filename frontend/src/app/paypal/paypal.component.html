@@ -1,0 +1,17 @@
+<form>
+<mat-card>
+<div *ngIf="!paidFor">
+    <h1 class="mat-h1">Pay dues - ${{ product.price}}</h1>
+    <p class="mat-body-2">{{product.description}}</p>
+    <img width="75" [src]="product.img">
+
+</div>
+
+<div *ngIf="paidFor">
+    <h1 class="mat-h1">Thanks for your payment!</h1>
+    <img src="assets/noddingman.gif">
+</div>
+
+<div #paypal></div>
+</mat-card>
+</form>
