@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +32,14 @@ export class WebRequestService {
     return this.http.delete(`${this.ROOT_URL}/${url}`)
 
   }
+
+  login(email: string, password: string)
+  {
+    return this.http.post(`${this.ROOT_URL}/users/login`, {
+      email,
+      password
+    }, {observe: 'response'
+  });
+  }
+
 }

@@ -1,35 +1,3 @@
-<!--<mat-card>
-    <form>
-        <h1 h1 class="mat-h1">Please login</h1>
-        <mat-form-field>
-            <input 
-            matInput  
-            name="email"
-            ngModel
-            required
-            placeholder="Email"
-            #email="ngModel">
-            <mat-error *ngIf="email.invalid">Please enter a email</mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input 
-            matInput 
-            name="password" 
-            ngModel
-            required
-            placeholder="Password"
-            #password = "ngModel">
-            <mat-error *ngIf="password.invalid">Please enter password</mat-error>
-        </mat-form-field>
-        <br>
-        <button 
-            mat-raised-button
-            color="primary" 
-            type="submit">Login</button>
-    </form>
-</mat-card>
--->
 <div class="login-page">
     <mat-card class="mat-elevation-z12">
       <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
@@ -72,7 +40,8 @@
                 <button
                   mat-raised-button
                   color="primary"
-                  class="login-button">
+                  class="login-button"
+                  (click)="onLoginButtonClicked(email.value, password.value)">
                   Sign In
                 </button>
   

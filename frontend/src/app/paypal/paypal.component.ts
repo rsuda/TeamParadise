@@ -13,7 +13,7 @@ export class PaypalComponent implements OnInit {
   product = {
     price: 50.00,
     description: 'Pay your dues',
-    img: 'assets/paradise-logo.jpg'
+    img: 'assets/paradiseBeach.png'
   };
 
   paidFor = false;

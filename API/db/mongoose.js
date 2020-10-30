@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/Paradise', {useNewUrlParser: true}).then(() => {
+mongoose.connect('mongodb+srv://dbParadise:Paradise!4@cluster0.vkgml.mongodb.net/dbParadise?retryWrites=true&w=majority', {useNewUrlParser: true}).then(() => {
     console.log("Connected to MongoDB successfully :");
 }).catch((e) => {
     console.log("Error while attempting to connecty to MongoDB");
