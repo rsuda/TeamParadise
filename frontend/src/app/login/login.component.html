@@ -44,7 +44,7 @@
                   (click)="onLoginButtonClicked(email.value, password.value)">
                   Sign In
                 </button>
-  
+
                 <button
                   mat-raised-button
                   class="login-button">
@@ -68,6 +68,51 @@
                   <mat-error *ngIf="email.invalid">Email is required</mat-error>
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
+              <mat-form-field>
+                <input
+                matInput
+                placeholder="First name"
+                required
+                minlength="1"
+                name="firstname"
+                ngModel
+                #unit="ngModel">
+                <!--<mat-error
+                  *ngIf="firstname.errors.required">
+                  Please enter your first name
+                </mat-error>-->
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Last name"
+              required
+              minlength="1"
+              name="lastname"
+              ngModel
+              #unit="ngModel">
+              <!--<mat-error
+                *ngIf="lastname.errors.required">
+                Please enter your last name
+              </mat-error>-->
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+            matInput
+            placeholder="Phone"
+            required
+            minlength="10"
+            name="phone"
+            ngModel
+            #unit="ngModel">
+            <!--<mat-error
+              *ngIf="lastname.errors.required">
+              Please enter your last name
+            </mat-error>-->
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
               <mat-form-field>
                 <input
                   matInput
@@ -105,6 +150,21 @@
                   </mat-error>
                 <mat-icon matSuffix>lock</mat-icon>
               </mat-form-field>
+              <mat-form-field>
+                <input
+                matInput
+                placeholder="Unit #"
+                required
+                minlength="1"
+                name="unit"
+                ngModel
+                #unit="ngModel">
+                <mat-error
+                  *ngIf="unit.errors.required">
+                  Please enter the unit number
+                </mat-error>
+              <mat-icon matSuffix>home</mat-icon>
+            </mat-form-field>
               <button
                 mat-raised-button
                 color="primary"
