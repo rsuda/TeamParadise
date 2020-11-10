@@ -5,11 +5,11 @@
         <mat-tab label="Edit">
           <mat-card-content>
             <form action="">
-              
-              <mat-form-field>
+              <mat-form-field aria-label="email">
+                <span class="example-spacer"></span>
                 <input
                   matInput
-                  placeholder="Email"
+                  placeholder="{{user.email}}"
                   required
                   name="email"
                   ngModel
@@ -20,7 +20,7 @@
               <mat-form-field>
                 <input
                 matInput
-                placeholder="First name"
+                placeholder="{{user.firstname}}"
                 required
                 minlength="1"
                 name="firstname"
@@ -35,7 +35,7 @@
             <mat-form-field>
               <input
               matInput
-              placeholder="Last name"
+              placeholder="{{user.lastname}}"
               required
               minlength="1"
               name="lastname"
@@ -50,7 +50,7 @@
           <mat-form-field>
             <input
             matInput
-            placeholder="Phone"
+            placeholder="{{user.phone}}"
             required
             minlength="10"
             name="phone"
@@ -63,20 +63,20 @@
           <mat-icon matSuffix>phone</mat-icon>
         </mat-form-field>
         <mat-form-field>
-            <input
-            matInput
-            placeholder="Unit #"
-            required
-            minlength="1"
-            name="unit"
-            ngModel
-            #unit="ngModel">
-            <mat-error
-              *ngIf="unit.errors.required">
-              Please enter the unit number
-            </mat-error>
-          <mat-icon matSuffix>home</mat-icon>
-        </mat-form-field>
+                <input
+                matInput
+                placeholder="{{user.unit}}"
+                required
+                minlength="1"
+                name="unit"
+                ngModel
+                #unit="ngModel">
+                <mat-error
+                  *ngIf="unit.errors.required">
+                  Please enter the unit number
+                </mat-error>
+              <mat-icon matSuffix>home</mat-icon>
+            </mat-form-field>
               <mat-form-field>
                 <input
                   matInput

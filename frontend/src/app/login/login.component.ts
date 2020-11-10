@@ -1,6 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -8,8 +9,12 @@ import { AuthService } from '../auth.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+    user: any;
+    loggedIn: boolean;
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router: Router) {
+        this.loggedIn = false;
+    }
 
     ngOnInit() {
         
@@ -50,6 +55,12 @@ export class LoginComponent {
    onLoginButtonClicked(email: string, password: string) {
     this.authService.login(email, password).subscribe((res: HttpResponse<any>) => {
         console.log(res);
+        if (res.status === 200) {
+            this.router.navigate(['./paypal']);
+            this.user = res.body;
+            console.log(this.user);
+            this.loggedIn = true;
+        }
     });
 }
 

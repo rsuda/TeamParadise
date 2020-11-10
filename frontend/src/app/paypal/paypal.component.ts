@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 declare var paypal;
 
@@ -10,9 +11,10 @@ declare var paypal;
 export class PaypalComponent implements OnInit {
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
 
+  constructor(private authService: AuthService){}
   product = {
-    price: 50.00,
-    description: 'Pay your dues',
+    price: this.authService.user.dues,
+    description: 'Pay your dues, ',
     img: 'assets/paradiseBeach.png'
   };
 

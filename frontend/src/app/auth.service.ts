@@ -9,7 +9,11 @@ import { WebRequestService } from './web-request.service';
 })
 export class AuthService {
 
-  constructor(private webService: WebRequestService, private router: Router) { }
+  loggedIn: boolean;
+  user: any;
+  constructor(private webService: WebRequestService, private router: Router) { 
+    this.loggedIn = false;
+  }
 
   login(email: string, password: string) {
     return this.webService.login(email, password).pipe(
@@ -17,9 +21,17 @@ export class AuthService {
       tap((res: HttpResponse<any>) => {
         this.setSession(res.body._id, res.headers.get('x-access-token'), res.headers.get('x-refresh-token'));
         console.log("Logged in!");
+        this.loggedIn = true;
+        this.user = res.body;
+        console.log(this.user);
       })
     )
   }
+
+  getUser() {
+    return this.user;
+  }
+
   private setSession(userId: string, accessToken: string, refreshToken: string) {
     localStorage.setItem('user-id', userId);
     localStorage.setItem('access-token', accessToken);
@@ -33,6 +45,7 @@ export class AuthService {
   }
 
   logout() {
+    this.loggedIn = false;
     this.removeSession();
   }
 }
