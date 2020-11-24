@@ -1,4 +1,4 @@
-<app-login *ngIf = "!loggedIn"></app-login>>
+<app-login *ngIf = "!authService.loggedIn"></app-login>
 <app-sidebar *ngIf = "authService.loggedIn">
     <router-outlet></router-outlet>
 </app-sidebar>

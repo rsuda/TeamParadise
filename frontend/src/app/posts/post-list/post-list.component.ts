@@ -25,8 +25,9 @@ export class PostListComponent implements OnInit{
         )
 
         this.postService.getPost().subscribe((posts: any[]) => {
-            this.posts = posts;
+            this.posts = posts.reverse();
         })
+
     }
 
     deletePostClick(id: string) {

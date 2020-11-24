@@ -42,4 +42,24 @@ export class WebRequestService {
   });
   }
 
+  signup(email: string, password: string, firstname: string, lastname: string, phone: string, unit: string) {
+    return this.http.post(`${this.ROOT_URL}/users`, {
+      email,
+      firstname,
+      lastname,
+      phone,
+      street: "testStreet",
+      city: "testCity",
+      state: "testState",
+      zipcode: "testzip",
+      password,
+      isadmin: false,
+      paidfor: true,
+      dues: 0,
+      unit
+    }, {
+        observe: 'response'
+      });
+  }
+
 }

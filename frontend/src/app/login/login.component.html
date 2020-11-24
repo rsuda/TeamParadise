@@ -1,4 +1,5 @@
 <div class="login-page">
+  <h1 style="color: aliceblue;font-size:500%;margin-top:30px;">Welcome to Paradise</h1>
     <mat-card class="mat-elevation-z12">
       <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
@@ -53,6 +54,9 @@
               </form>
             </mat-card-content>
         </mat-tab>
+
+
+
         <mat-tab label="Sign Up">
           <mat-card-content>
             <form action="">
@@ -62,10 +66,10 @@
                   matInput
                   placeholder="Email"
                   required
-                  name="email"
+                  name="email1"
                   ngModel
-                  #email="ngModel">
-                  <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                  #email1="ngModel">
+                  <mat-error *ngIf="email1.invalid">Email is required</mat-error>
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
               <mat-form-field>
@@ -76,7 +80,7 @@
                 minlength="1"
                 name="firstname"
                 ngModel
-                #unit="ngModel">
+                #firstname="ngModel">
                 <!--<mat-error
                   *ngIf="firstname.errors.required">
                   Please enter your first name
@@ -91,7 +95,7 @@
               minlength="1"
               name="lastname"
               ngModel
-              #unit="ngModel">
+              #lastname="ngModel">
               <!--<mat-error
                 *ngIf="lastname.errors.required">
                 Please enter your last name
@@ -106,7 +110,7 @@
             minlength="10"
             name="phone"
             ngModel
-            #unit="ngModel">
+            #phone="ngModel">
             <!--<mat-error
               *ngIf="lastname.errors.required">
               Please enter your last name
@@ -120,15 +124,15 @@
                   type="password"
                   required
                   minlength="6"
-                  name="password"
+                  name="password1"
                   ngModel
-                  #password="ngModel">
+                  #password1="ngModel">
                   <mat-error
-                    *ngIf="password.errors && password.errors.required">
+                    *ngIf="password1.errors && password1.errors.required">
                     Password is required
                   </mat-error>
                   <mat-error
-                    *ngIf="password.errors && password.errors.minlength">
+                    *ngIf="password1.errors && password1.errors.minlength">
                     Password must be of length 6
                   </mat-error>
                 <mat-icon matSuffix>lock</mat-icon>
@@ -159,16 +163,13 @@
                 name="unit"
                 ngModel
                 #unit="ngModel">
-                <mat-error
-                  *ngIf="unit.errors.required">
-                  Please enter the unit number
-                </mat-error>
               <mat-icon matSuffix>home</mat-icon>
             </mat-form-field>
               <button
                 mat-raised-button
                 color="primary"
-                class="login-button">
+                class="login-button"
+                (click)="onSignupButtonClicked(email1.value, firstname.value, lastname.value, phone.value, unit.value, password1.value)">
                 Sign Up
               </button>
             </form>

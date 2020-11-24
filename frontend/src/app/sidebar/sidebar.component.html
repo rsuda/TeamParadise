@@ -10,7 +10,7 @@
       <a mat-list-item routerLink='announcements'>Announcements</a>
       <a mat-list-item routerLink='profile'>Profile</a>
       <a mat-list-item routerLink='about'>About</a>
-      <a mat-list-item color ="primary"><b>Admin Tools</b></a>
+      <a mat-list-item color ="primary" *ngIf = "user.isadmin"><b>Admin Tools</b></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,7 +25,7 @@
       </button>
       <span>Paradise</span>
       <span class="example-spacer"></span>
-      <button mat-raised-button color="accent" routerLink="login">Sign in</button>
+      <button mat-raised-button color="accent" routerLink="login" *ngIf = "loggedIn">Sign out</button>
     </mat-toolbar>
     <ng-content></ng-content>
     <!-- Add Content Here -->

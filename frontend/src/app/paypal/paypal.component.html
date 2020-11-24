@@ -2,7 +2,7 @@
 <mat-card class="mat-elevation-z12">
 <div *ngIf="!paidFor">
     <h1 class="mat-h1">Total amount due - ${{ product.price}}</h1>
-    <p class="mat-body-2">{{product.description}}</p>
+    <p class="mat-body-2">{{product.description}}, {{user.firstname}}</p>
     <img width="350" [src]="product.img">
 
 </div>

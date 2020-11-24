@@ -18,6 +18,10 @@ export class PaypalComponent implements OnInit {
     img: 'assets/paradiseBeach.png'
   };
 
+  user = {
+    firstname: this.authService.user.firstname
+  };
+
   paidFor = false;
 
   ngOnInit() {

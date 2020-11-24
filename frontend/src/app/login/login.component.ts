@@ -2,6 +2,7 @@ import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
     selector: 'app-login',
@@ -63,5 +64,14 @@ export class LoginComponent {
         }
     });
 }
+
+//email.value, firstname.value, lastname.value, phone.value, unit.value, password.value
+onSignupButtonClicked(email: string, firstname: string, lastname: string, phone: string, unit: string, password: string) {
+    this.authService.signup(email, password, firstname, lastname, phone, unit).subscribe((res: HttpResponse<any>) => {
+      console.log(res);
+      this.router.navigate(['./paypal']);
+      this.loggedIn = true;
+    });
+  }
 
 }
