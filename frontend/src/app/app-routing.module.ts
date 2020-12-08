@@ -8,6 +8,7 @@ import { PostComponent } from './posts/posts.component'
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'posts', component: PostComponent },
   { path: 'create', component: PostCreateComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent}
+  { path: 'admin', component: AdminComponent},
+  { path: 'footer', component: FooterComponent}
 ];
 
 @NgModule({

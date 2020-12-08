@@ -65,7 +65,7 @@ export class WebRequestService {
 
   updateUserDuesToPaid(email: string)
   {
-    console.log("webservice");
+    console.log("updateDues");
     return this.http.put(`${this.ROOT_URL}/id`, {
       email,
       dues: "0"

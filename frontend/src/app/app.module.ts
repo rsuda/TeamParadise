@@ -29,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import { PostComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { AdminComponent } from './admin/admin.component';
     PostCreateComponent,
     PostListComponent,
     LoginComponent, 
-    ProfileComponent, SidebarComponent, PostComponent, AboutComponent, AdminComponent
+    ProfileComponent, SidebarComponent, PostComponent, AboutComponent, AdminComponent, FooterComponent
   ],
   imports: [
     MatInputModule,
