@@ -10,19 +10,28 @@
 [Context Document](https://docs.google.com/document/d/1mIHqrMDn6RXZoIGhYpZ51VzRiX0XLe12f2R5uDZzfQU/edit?usp=sharing)
 
 # Milestone 1
+[Milestone 1 Project Tracker](https://github.com/rsuda/TeamParadise/milestone/1?closed=1)
+
 [Milestone 1 Demo](https://use.vg/unSA6l)
 
 [Automated Testing Tools](https://use.vg/cwPWzB)
 
 # Milestone 2
+[Milestone 2 Project Tracker](https://github.com/rsuda/TeamParadise/milestone/2?closed=1)
+
 [Milestone 2 Demo](https://use.vg/WbrN2g)
 
 [Mid-semester Project Report](https://docs.google.com/document/d/19NafB3zuDWuD7HFGPkMNt2E7IxYdBz8M-mS_RmLMe6A/edit?usp=sharing)
 
 # Milestone 3
+[Milestone 3 Project Tracker](https://github.com/rsuda/TeamParadise/milestone/3?closed=1)
+
 [Milestone 3 Demo](https://use.vg/SZP7EM)
 
 # Milestone 4
+[Milestone 4 Project Tracker](https://github.com/rsuda/TeamParadise/milestone/4?closed=1)
+
 [Milestone 4 Demo](https://use.vg/qk9Q0d)
 
 # Milestone 5
+[Milestone 5 Project Tracker](https://github.com/rsuda/TeamParadise/milestone/5?closed=1)
