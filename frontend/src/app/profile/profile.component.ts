@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { WebRequestService } from '../web-request.service';
+import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -26,12 +29,22 @@ export class ProfileComponent implements OnInit {
     _id: ""
   };
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private webService: WebRequestService, private router: Router) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
     console.log("profile user");
     console.log(this.user);
   }
+
+  onSavedButtonClicked(email: string, firstname: string, lastname: string, phone: string, unit: string) {
+    console.log(email);
+    return this.webService.updateUserProfile(this.user._id ,email, firstname, lastname, phone, unit, this.user.dues).subscribe((res: HttpResponse<any>) => {
+    console.log("update user");
+    this.user = this.authService.getUser();
+    this.ngOnInit();
+    this.router.navigate(['./paypal']);
+  });
+}
 
 }

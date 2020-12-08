@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { WebRequestService } from '../web-request.service';
+import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 declare var paypal;
 
@@ -11,7 +14,7 @@ declare var paypal;
 export class PaypalComponent implements OnInit {
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private WebRequestService: WebRequestService, private router: Router){}
   product = {
     price: this.authService.user.dues,
     description: 'Pay your dues, ',
@@ -19,10 +22,12 @@ export class PaypalComponent implements OnInit {
   };
 
   user = {
-    firstname: this.authService.user.firstname
+    email: this.authService.user.email,
+    firstname: this.authService.user.firstname,
+    paidFor: this.authService.user.paidFor
   };
 
-  paidFor = false;
+  //paidFor = false;
 
   ngOnInit() {
     paypal
@@ -42,8 +47,15 @@ export class PaypalComponent implements OnInit {
         },
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
-          this.paidFor = true;
+          this.user.paidFor = true;
           console.log(order);
+          this.product.price = "0";
+          return this.WebRequestService.updateUserDuesToPaid(this.user.email).subscribe((res: HttpResponse<any>) => {
+            console.log("update user");
+            window.location.reload();
+            this.router.navigate(['./paypal']);
+          });
+          
         },
         onError: err => {
           console.log(err);

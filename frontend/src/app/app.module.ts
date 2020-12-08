@@ -28,6 +28,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { PostComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AboutComponent } from './about/about.component';
     PostCreateComponent,
     PostListComponent,
     LoginComponent, 
-    ProfileComponent, SidebarComponent, PostComponent, AboutComponent
+    ProfileComponent, SidebarComponent, PostComponent, AboutComponent, AdminComponent
   ],
   imports: [
     MatInputModule,

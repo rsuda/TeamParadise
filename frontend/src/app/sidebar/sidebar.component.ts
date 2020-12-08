@@ -21,4 +21,7 @@ export class SidebarComponent {
   user = this.authService.user;
   loggedIn = this.authService.loggedIn;
 
+  onSignOut() {
+    this.authService.loggedIn = false;
+  }
 }

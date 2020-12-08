@@ -71,6 +71,7 @@ onSignupButtonClicked(email: string, firstname: string, lastname: string, phone:
       console.log(res);
       this.router.navigate(['./paypal']);
       this.loggedIn = true;
+      this.onLoginButtonClicked(email, password);
     });
   }
 

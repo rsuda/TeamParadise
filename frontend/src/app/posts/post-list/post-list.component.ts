@@ -4,6 +4,7 @@ import { Post } from '../post.model';
 import { PostsService } from '../posts.service';
 import { PostService } from 'src/app/post.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
     selector: 'app-post-list',
@@ -15,7 +16,9 @@ export class PostListComponent implements OnInit{
     private postsSub: Subscription;
     selectedPostId: string;
 
-    constructor(private PostsService: PostsService, private postService: PostService, private route: ActivatedRoute, private router: Router) {}
+    constructor(private authService: AuthService, private PostsService: PostsService, private postService: PostService, private route: ActivatedRoute, private router: Router) {}
+
+    user = this.authService.user;
 
     ngOnInit() {
         this.route.params.subscribe(

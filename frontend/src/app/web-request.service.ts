@@ -42,6 +42,39 @@ export class WebRequestService {
   });
   }
 
+  updateUserProfile(_id: string, email: string, firstname: string, lastname: string, phone: string, unit: string, dues: string)
+  {
+    console.log("webservice");
+    return this.http.put(`${this.ROOT_URL}/id`, {
+      _id,
+      email,
+      firstname,
+      lastname,
+      phone,
+      street: "tstr",
+      city: "tCity",
+      state: "tState",
+      zipcode: "69001",
+      dues,
+      unit
+    }, {
+      observe: 'response'
+    });
+    console.log("works2");
+  }
+
+  updateUserDuesToPaid(email: string)
+  {
+    console.log("webservice");
+    return this.http.put(`${this.ROOT_URL}/id`, {
+      email,
+      dues: "0"
+    }, {
+      observe: 'response'
+    });
+    console.log("works2");
+  }
+
   signup(email: string, password: string, firstname: string, lastname: string, phone: string, unit: string) {
     return this.http.post(`${this.ROOT_URL}/users`, {
       email,
@@ -61,5 +94,6 @@ export class WebRequestService {
         observe: 'response'
       });
   }
+  
 
 }

@@ -25,7 +25,7 @@
                 minlength="1"
                 name="firstname"
                 ngModel
-                #unit="ngModel">
+                #firstname="ngModel">
                 <!--<mat-error
                   *ngIf="firstname.errors.required">
                   Please enter your first name
@@ -40,7 +40,7 @@
               minlength="1"
               name="lastname"
               ngModel
-              #unit="ngModel">
+              #lastname="ngModel">
               <!--<mat-error
                 *ngIf="lastname.errors.required">
                 Please enter your last name
@@ -55,7 +55,7 @@
             minlength="10"
             name="phone"
             ngModel
-            #unit="ngModel">
+            #phone="ngModel">
             <!--<mat-error
               *ngIf="lastname.errors.required">
               Please enter your last name
@@ -71,10 +71,6 @@
                 name="unit"
                 ngModel
                 #unit="ngModel">
-                <mat-error
-                  *ngIf="unit.errors.required">
-                  Please enter the unit number
-                </mat-error>
               <mat-icon matSuffix>home</mat-icon>
             </mat-form-field>
               <mat-form-field>
@@ -117,7 +113,8 @@
               <button
                 mat-raised-button
                 color="primary"
-                class="save-button">
+                class="save-button"
+                (click)="onSavedButtonClicked(email.value, firstname.value, lastname.value, phone.value, unit.value)">
                 Save
               </button>
               <button

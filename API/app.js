@@ -152,7 +152,7 @@ app.post('/users', (req, res) => {
 app.post('/users/login', (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
-
+    console.log(password);
     User.findByCredentials(email, password).then((user) => {
         return user.createSession().then((refreshToken) => {
 
@@ -182,6 +182,50 @@ app.get('/users/me/access-token', verifySession, (req, res) => {
     })
 })
 
+app.put('/id', (req, res) => {
+    console.log("server");
+    console.log(req.body);
+    User.findOneAndUpdate({ email: req.body.email}, {
+        $set: req.body
+    }).then(() => {
+        res.sendStatus(200);
+    });
+});
+
+/**
+app.patch('/users/:id', (req, res, next) => {
+    const user = new User({
+        _id: req.params.id,
+        email: req.body.email,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        phone: req.body.phone,
+        street: req.body.street,
+        city: req.body.city,
+        state: req.body.state,
+        zipcode: req.body.zipcode,
+        password: req.body.password,
+        isadmin: req.body.isadmin,
+        paidfor: req.body.paidfor,
+        dues: req.body.dues,
+        unit: req.body.unit
+    });
+    console.log("server");
+    User.updateOne({_id: req.params.id}, user).then(
+      () => {
+        res.status(201).json({
+          message: 'User updated successfully!'
+        });
+      }
+    ).catch(
+      (error) => {
+        res.status(400).json({
+          error: error
+        });
+      }
+    );
+  });
+ */
 
 app.listen(3000, () => {
     console.log("Server is listening on port 3001");
