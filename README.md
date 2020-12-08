@@ -1,6 +1,8 @@
 # TeamParadise
  The purpose of this project is to develop a web application for the Homeowners Association (HOA). The website will be used for a small number of users, where they are able to pay bills and look at past payments. Also some users will be able to post announcements. Some features that may be implemented in the future include a bulletin board where users can post items for sale and possibly a mobile version of the web application.
  
+![GitHub Logo](/images/logo.png)
+ 
 [Project Proposal](https://docs.google.com/document/d/1opkEftzTbASW-GIzWm8avJmhpAFZ3x2t35p-xIiuBoM/edit?usp=sharing)
 
 [Project Plan](https://docs.google.com/document/d/1NGTFKrJDl3wVPMaE81s8E9MLq8nSZzVulOxF1kYV9uQ/edit?usp=sharing)
