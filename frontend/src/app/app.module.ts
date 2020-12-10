@@ -9,7 +9,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -30,6 +32,10 @@ import { PostComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer/footer.component';
+import { PostPageComponent } from './posts/post/post.component';
+import { CreatePostDialog } from './posts/post/post.component';
+import { CookieService } from 'ngx-cookie-service';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,14 @@ import { FooterComponent } from './footer/footer.component';
     PostCreateComponent,
     PostListComponent,
     LoginComponent, 
-    ProfileComponent, SidebarComponent, PostComponent, AboutComponent, AdminComponent, FooterComponent
+    ProfileComponent,
+    SidebarComponent,
+    PostComponent,
+    AboutComponent,
+    AdminComponent,
+    FooterComponent,
+    PostPageComponent,
+    CreatePostDialog
   ],
   imports: [
     MatInputModule,
@@ -57,9 +70,12 @@ import { FooterComponent } from './footer/footer.component';
     MatTabsModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatMenuModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

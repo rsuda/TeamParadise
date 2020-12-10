@@ -11,6 +11,7 @@ export class AuthService {
 
   loggedIn: boolean;
   user: any;
+  userName: string;
   constructor(private webService: WebRequestService, private router: Router) { 
     this.loggedIn = false;
   }
@@ -58,5 +59,10 @@ export class AuthService {
   logout() {
     this.loggedIn = false;
     this.removeSession();
+  }
+
+  getName() {
+    this.userName = this.user.firstname + " " + this.user.lastname;
+    return this.userName;
   }
 }

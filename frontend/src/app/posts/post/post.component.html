@@ -1,0 +1,25 @@
+<mat-card class="mat-elevation-z2" style="text-align: center;">
+    <h1>Announcements</h1>
+    <mat-card class="mat-elevation-z5" *ngFor="let post of posts">
+        <mat-card-header>
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit</span>
+                </button>
+                <button mat-menu-item *ngIf="user.isadmin" (click)=deletePostClick(post._id)>
+                    <mat-icon>delete</mat-icon>
+                    <span>Delete</span>
+                </button>
+            </mat-menu>
+            <b>Kyle Wieser</b>
+        </mat-card-header>
+        <mat-card-content>
+            {{post.content}}
+        </mat-card-content>
+    </mat-card>
+    <button id="postButton" mat-raised-button color="primary" (click)="openDialog()">Create Post</button>
+</mat-card>

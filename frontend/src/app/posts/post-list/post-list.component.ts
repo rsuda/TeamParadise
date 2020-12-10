@@ -29,6 +29,7 @@ export class PostListComponent implements OnInit{
 
         this.postService.getPost().subscribe((posts: any[]) => {
             this.posts = posts.reverse();
+            console.log(posts);
         })
 
     }

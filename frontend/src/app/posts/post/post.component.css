@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    margin-top: 16px;
+}
+
+mat-card.mat-elevation-z2 {
+    width: 80%;
+    margin: 2% auto;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card.mat-elevation-z5 {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5%;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: left;
+}
+
+#postButton {
+    margin-left: 80%;
+    width: 10%;
+}
